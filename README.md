@@ -1,6 +1,8 @@
-# RAG for User Manuals
+# A Layout-Aware, Multimodal Retrieval-Augmented Generation System for Technical Manuals
 
-## Folder Structure
+This project is a hybrid retrieval-augmented generation (RAG) system for querying equipment manuals in PDF form. It combines dense vector search using Qdrant, lexical BM25 retrieval, and Cohere reranking to answer natural-language questions grounded in manual content — including text, embedded images, and tabular specifications (torque values, part numbers, error codes) extracted and stored separately for precise lookup. Built with FastAPI and LlamaIndex, it supports incremental document ingestion, cached parsing, and environment-specific LLM backends (Groq for dev, self-hosted vLLM for production).
+
+## Project Structure
 
 ```
 root/
@@ -27,25 +29,24 @@ root/
 pip install uv
 ```
 
-2. Install dependencies
+2. Copy .env.example to .env file and add API Keys
+```
+sp .env.example .env
+```
+
+3. Run local Qdrant server
+```
+docker compose up qdrant -d
+```
+
+4. Install dependencies
 ```
 cd ./src
 uv sync
 ```
 
-3. Copy .env.example to .env file and add API Keys
-```
-
-```
-
-4. Run local Qdrant server
-```
-docker compose up qdrant -d
-```
-
 5. Run app.py
 ```
-cd ./src
 uv run uvicorn app.main:app --reload
 ```
 
