@@ -1,6 +1,6 @@
 # A Layout-Aware, Multimodal Retrieval-Augmented Generation System for Technical Manuals
 
-This project is a hybrid retrieval-augmented generation (RAG) system for querying equipment manuals in PDF form. It combines dense vector search using Qdrant, lexical BM25 retrieval, and Cohere reranking to answer natural-language questions grounded in manual content — including text, embedded images, and tabular specifications (torque values, part numbers, error codes) extracted and stored separately for precise lookup. Built with FastAPI and LlamaIndex, it supports incremental document ingestion, cached parsing, and environment-specific LLM backends (Groq for dev, self-hosted vLLM for production).
+This project is a hybrid retrieval-augmented generation (RAG) system for querying equipment manuals in PDF form. It combines dense vector search using Qdrant, lexical BM25 retrieval, and Cohere reranking to answer natural-language questions grounded in manual content — including text, embedded images, and tabular specifications (torque values, part numbers, error codes) extracted and stored separately for precise lookup. Built with FastAPI and LlamaIndex, it supports incremental document ingestion, cached parsing, and environment-specific LLM backends (Groq for dev and self-hosted vLLM for production).
 
 ## Project Structure
 
